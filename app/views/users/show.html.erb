@@ -1,2 +1,8 @@
-<h3>Hello: <%= @user.email %></h3>
-<h3>Your To do list below</h3>
+<h3 class = 'media-heading'>Hello: <%= @user.email %></h3>
+You have <%= pluralize(@user.items.count, 'items') %> listed
+
+
+<%= render @items %>
+
+<h4>Make new list! </h4><br>
+<%= render partial: 'items/form', locals: {user: @user} %>
