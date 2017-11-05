@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+
+  get 'items/create'
+
+  get 'items/show'
+
   get 'users/show'
 
   get 'welcome/index'
@@ -9,7 +15,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-
+  resources :users, only: [:show] do #only show items to their owners.
+    resources :items, only: [:create, :destroy]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
