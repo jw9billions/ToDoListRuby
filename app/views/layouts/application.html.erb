@@ -18,7 +18,7 @@
   <div class="pull-right">
     <% if user_signed_in? %>
       Signed in as: <strong><%= current_user.email %></strong> <br />
-      <%= link_to current_user.email, edit_user_registration_path, :class => 'navbar-link' %>
+      Edit <%= link_to current_user.email, edit_user_registration_path, :class => 'navbar-link' %>
       <br>
       <%= link_to "Item List", user_path(current_user) %>
       <br>
