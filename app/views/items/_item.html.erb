@@ -10,10 +10,10 @@
 
 -->
 
-<div id=<%="item-#{item.id}"%> class="item list-group-item">
-    <button type="button" class="btn btn-default">
-      <%= link_to item.name, user_item_path(@user.id, item.id), method: :delete %>
-    </button>
+
+<div class="list-group">
+    <%= link_to "", user_item_path(@user.id, item.id), method: :delete, class: 'glyphicon glyphicon-check' %>
+    <%= item.name%> -
     <small>submitted <%= time_ago_in_words(item.created_at) %> ago |
           Time left: <%= distance_of_time_in_words(Time.now, item.created_at, include_seconds: true) %></small>
 </div>
